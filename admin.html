@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EggMania Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">EggMania Admin Panel</h1>
+
+<!-- LOGIN -->
+<div id="loginBox" style="text-align:center;">
+    <h2>Admin Login</h2>
+    <input id="user" placeholder="Username"><br><br>
+    <input id="pass" type="password" placeholder="Password"><br><br>
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none; text-align:center;">
+    <h2>Welcome Biswarup Biswas 👨‍🌾</h2>
+
+    <h3>Add New Product</h3>
+    <input id="pname" placeholder="Product Name"><br><br>
+    <input id="pprice" placeholder="Price"><br><br>
+    <button onclick="addProduct()">Add Product</button>
+
+    <h3>Saved Products</h3>
+    <ul id="list"></ul>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
