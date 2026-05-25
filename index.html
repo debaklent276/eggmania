@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EggMania</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Egg🥚Mania</h1>
+
+    <p>By Biswarup Biswas</p>
+
+</header>
+
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="#">Home</a>
+
+    <a href="#products">Products</a>
+
+    <a href="#cartSection">
+
+        Cart 🛒 (
+        <span id="count">0</span>
+        )
+
+    </a>
+
+    <button id="loginBtn">
+
+        Customer Login
+
+    </button>
+
+    <span id="welcomeUser"></span>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>Farm Fresh Eggs Delivered Daily 🥚</h1>
+
+    <p>Healthy • Organic • Affordable</p>
+
+</section>
+
+
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+
+    <!-- WHITE -->
+
+    <div class="card">
+
+        <h3>White Eggs (12 pcs)</h3>
+
+        <p>₹90</p>
+
+        <input type="number"
+               id="whiteQty"
+               value="1"
+               min="1">
+
+        <button
+        onclick="addToCart('White Eggs',90,'whiteQty')">
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+
+
+    <!-- BROWN -->
+
+    <div class="card">
+
+        <h3>Brown Eggs (12 pcs)</h3>
+
+        <p>₹110</p>
+
+        <input type="number"
+               id="brownQty"
+               value="1"
+               min="1">
+
+        <button
+        onclick="addToCart('Brown Eggs',110,'brownQty')">
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ORGANIC -->
+
+    <div class="card">
+
+        <h3>Organic Eggs (12 pcs)</h3>
+
+        <p>₹140</p>
+
+        <input type="number"
+               id="organicQty"
+               value="1"
+               min="1">
+
+        <button
+        onclick="addToCart('Organic Eggs',140,'organicQty')">
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- CART -->
+
+<section class="cart-section" id="cartSection">
+
+    <h2>Your Cart 🛒</h2>
+
+    <ul id="cartItems"></ul>
+
+    <h3>
+        Total:
+        ₹<span id="total">0</span>
+    </h3>
+
+    <button id="checkoutBtn">
+
+        Place Order 📦
+
+    </button>
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="products" id="products">
+
+    <h2>Our Premium Egg Collection 🥚</h2>
+
+
+    <!-- WHITE EGGS -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?q=80&w=800"
+             class="product-img">
+
+        <h3>White Eggs</h3>
+
+        <p class="price">₹90 / 12 pcs</p>
+
+        <p class="details">
+
+            White eggs are the perfect everyday choice.
+            They are affordable, rich in protein and ideal
+            for breakfast, baking and daily nutrition.
+
+        </p>
+
+        <ul class="features">
+
+            <li>✔ Budget Friendly</li>
+
+            <li>✔ High Protein</li>
+
+            <li>✔ Perfect For Daily Meals</li>
+
+        </ul>
+
+        <button onclick="showEggInfo('white')">
+
+            Learn More
+
+        </button>
+
+    </div>
+
+
+
+    <!-- BROWN EGGS -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?q=80&w=800"
+             class="product-img">
+
+        <h3>Brown Eggs</h3>
+
+        <p class="price">₹110 / 12 pcs</p>
+
+        <p class="details">
+
+            Brown eggs come from healthier farm hens
+            and contain richer taste with slightly
+            stronger shell quality than white eggs.
+
+        </p>
+
+        <ul class="features">
+
+            <li>✔ Rich Farm Taste</li>
+
+            <li>✔ Stronger Egg Shell</li>
+
+            <li>✔ Naturally Nutritious</li>
+
+        </ul>
+
+        <button onclick="showEggInfo('brown')">
+
+            Learn More
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ORGANIC EGGS -->
+
+    <div class="card">
+
+        <img src="https://tiimg.tistatic.com/fp/1/005/259/high-in-taste-organic-egg-337.jpg"
+             class="product-img">
+
+        <h3>Organic Eggs</h3>
+
+        <p class="price">₹140 / 12 pcs</p>
+
+        <p class="details">
+
+            Organic eggs are produced from hens fed with
+            completely natural organic food without chemicals,
+            hormones or antibiotics.
+
+        </p>
+
+        <ul class="features">
+
+            <li>✔ 100% Organic Feed</li>
+
+            <li>✔ Chemical Free</li>
+
+            <li>✔ Premium Health Choice</li>
+
+        </ul>
+
+        <button onclick="showEggInfo('organic')">
+
+            Learn More
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- EGG DETAILS POPUP -->
+
+<div id="eggPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="close"
+              onclick="closePopup('eggPopup')">
+
+              ❌
+
+        </span>
+
+        <h2 id="eggTitle"></h2>
+
+        <p id="eggDescription"></p>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- OWNER -->
+
+<section class="owner-section">
+
+    <h2>Meet The Owner 👨‍🌾</h2>
+
+    <img src="owner.jpg.jpeg" class="owner-img">
+
+    <h3>Biswarup Biswas</h3>
+
+    <p>
+
+        Delivering farm fresh eggs directly
+        from trusted farms to your doorstep.
+
+    </p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <button id="aboutBtn">
+
+        About Us
+
+    </button>
+
+    <button id="contactBtn">
+
+        Contact Us
+
+    </button>
+
+</footer>
+
+
+
+<!-- ABOUT POPUP -->
+
+<div id="aboutPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="close"
+              onclick="closePopup('aboutPopup')">
+
+              ❌
+
+        </span>
+
+        <h2>About EggMania</h2>
+
+        <p>
+
+            We provide fresh farm eggs
+            with best quality.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- CONTACT POPUP -->
+
+<div id="contactPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="close"
+              onclick="closePopup('contactPopup')">
+
+              ❌
+
+        </span>
+
+        <h2>Contact</h2>
+
+        <p>Owner: Biswarup Biswas</p>
+
+        <p>Phone: 6296802643</p>
+
+    </div>
+
+</div>
+
+
+
+<!-- LOGIN POPUP -->
+
+<div id="loginPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="close"
+              onclick="closePopup('loginPopup')">
+
+              ❌
+
+        </span>
+
+        <h2>Customer Signup 👤</h2>
+
+        <input type="text"
+               id="customerName"
+               placeholder="Name">
+
+        <input type="text"
+               id="customerPhone"
+               placeholder="Phone">
+
+        <textarea id="customerAddress"
+                  placeholder="Address"></textarea>
+
+        <input type="password"
+               id="customerPassword"
+               placeholder="Password">
+
+        <button id="loginSubmit">
+
+            Save & Login
+
+        </button>
+
+        <p id="loginMsg"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
